@@ -1,5 +1,5 @@
 # LEAN WP Development Tool
-## A tool to develop fast and easy in WordPress.
+## A tool to develop fast and easy in WordPress in any theme.
 
 ![maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg) ![wordpress](https://img.shields.io/badge/wordpress-%3E%3D4.8-green.svg) ![php](https://img.shields.io/badge/php-%3E%3D7.0-green.svg) [![GitHub contributors](https://img.shields.io/github/contributors/wearenolte/lean-theme.svg)](https://github.com/wearenolte/lean-theme/graphs/contributors)
 
