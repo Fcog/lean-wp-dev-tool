@@ -28,18 +28,11 @@ class Post {
 	public $excerpt;
 
 	/**
-	 * The post featured image id. Is used in the blog single page.
+	 * The post featured image id.
 	 *
 	 * @var string the post image id.
 	 */
 	public $image_id;
-
-	/**
-	 * The post teaser image id. Is used in the blog archive page.
-	 *
-	 * @var string the post image id.
-	 */
-	public $teaser_image_id;
 
 	/**
 	 * The post author display.
@@ -85,8 +78,7 @@ class Post {
 		$this->title           = get_the_title( $post_id );
 		$this->content         = apply_filters( 'the_content', get_post_field( 'post_content', $post_id ) );
 		$this->excerpt         = get_post_field( 'the_excerpt', $post_id );
-		$this->image_id        = lean_acf_string( 'featured_post_image', $post_id );
-		$this->teaser_image_id = lean_acf_string( 'teaser_post_image', $post_id );
+		$this->image_id        = get_post_thumbnail_id( $post_id );
 		$this->author_image    = get_avatar_url( get_post_field( 'post_author', $post_id ) );
 		$this->author          = get_the_author_meta( 'display_name', get_post_field( 'post_author', $post_id ) );
 		$this->date            = get_the_date( '', $post_id );
@@ -166,7 +158,7 @@ class Post {
 				$post->to_array(),
 				[
 					'author'   => 'By ' . $post->author,
-					'image_id' => $post->teaser_image_id,
+					'image_id' => $post->image_id,
 					'button'   => [
 						'title' => 'Read Article',
 						'url'   => $post->permalink,
