@@ -44,6 +44,13 @@ add_action( 'wp_footer', function() {
 });
 
 /**
+ * ACF json files folder path setting.
+ */
+add_filter('acf/settings/save_json', function my_acf_json_save_point( $path ) {
+    return get_stylesheet_directory() . '/backend/acf';
+});
+
+/**
  * Namespace used for the localize object.
  */
 add_filter(
